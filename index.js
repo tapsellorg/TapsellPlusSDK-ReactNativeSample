@@ -11,6 +11,9 @@ import {
   StandardScreen,
 } from './app/screen';
 
+import TapsellPlus from "react-native-tapsell-plus-sdk";
+import { APP_KEY } from "./app/Constants";
+
 const RootStack = createStackNavigator({
   Root: {screen: RootScreen},
   Rewarded: {screen: RewardedScreen},
@@ -25,6 +28,7 @@ export default AppContainer;
 class TapsellPlusSample extends React.Component {
   constructor() {
     super();
+    TapsellPlus.initialize(APP_KEY);
   }
 
   render() {
