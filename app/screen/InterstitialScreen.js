@@ -17,7 +17,7 @@ export default class Interstitial extends React.Component {
 
   onRequestClicked() {
     TapsellPlus.requestInterstitial(
-      ZONE_IDS.Interstitial,
+      ZONE_IDS.INTERSTITIAL,
       () => {
         ToastAndroid.show('ad is ready', ToastAndroid.SHORT);
       },
@@ -29,7 +29,7 @@ export default class Interstitial extends React.Component {
 
   onShowClicked() {
     TapsellPlus.showAd(
-      ZONE_IDS.REWARDED,
+      ZONE_IDS.INTERSTITIAL,
       () => {
         ToastAndroid.show('open ad', ToastAndroid.SHORT);
       },
