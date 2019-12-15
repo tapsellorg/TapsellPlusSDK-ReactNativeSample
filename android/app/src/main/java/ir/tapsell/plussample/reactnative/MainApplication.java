@@ -1,4 +1,4 @@
-package com.tapsellplusreactnativesample;
+package ir.tapsell.plussample.reactnative;
 
 import android.app.Application;
 import android.content.Context;

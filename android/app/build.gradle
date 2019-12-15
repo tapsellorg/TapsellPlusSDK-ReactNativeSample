@@ -128,7 +128,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.tapsellplusreactnativesample"
+        applicationId "ir.tapsell.plussample.reactnative"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
