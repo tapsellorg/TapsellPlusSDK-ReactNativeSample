@@ -7,7 +7,7 @@ import {
   Text,
 } from 'react-native';
 
-import TapsellPlus from 'react-native-tapsell-plus-sdk';
+import TapsellPlus from 'react-native-tapsell-plus';
 import {ZONE_IDS} from '../Constants';
 
 export default class Rewarded extends React.Component {
@@ -62,7 +62,7 @@ export default class Rewarded extends React.Component {
       </View>
     );
   }
-} 
+}
 
 const styles = StyleSheet.create({
   button: {

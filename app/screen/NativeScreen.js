@@ -2,7 +2,7 @@ import React from 'react';
 import {ToastAndroid, StyleSheet} from 'react-native';
 import NativeAd from '../component/NativeAd';
 
-import TapsellPlus from 'react-native-tapsell-plus-sdk';
+import TapsellPlus from 'react-native-tapsell-plus';
 import {ZONE_IDS} from '../Constants';
 
 export default class Native extends React.Component {

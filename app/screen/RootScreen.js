@@ -26,12 +26,6 @@ export default class RootScreen extends React.Component {
           onPress={() => this.props.navigation.navigate('Native')}>
           <Text style={styles.buttonText}>Native</Text>
         </TouchableOpacity>
-
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => this.props.navigation.navigate('Standard')}>
-          <Text style={styles.buttonText}>Standard</Text>
-        </TouchableOpacity>
       </View>
     );
   }

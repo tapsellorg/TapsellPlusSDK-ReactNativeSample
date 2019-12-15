@@ -7,19 +7,17 @@ import {
   RootScreen,
   RewardedScreen,
   InterstitialScreen,
-  NativeScreen,
-  StandardScreen,
+  NativeScreen
 } from './app/screen';
 
-import TapsellPlus from "react-native-tapsell-plus-sdk";
+import TapsellPlus from 'react-native-tapsell-plus';
 import { APP_KEY } from "./app/Constants";
 
 const RootStack = createStackNavigator({
   Root: {screen: RootScreen},
   Rewarded: {screen: RewardedScreen},
   Interstitial: {screen: InterstitialScreen},
-  Native: {screen: NativeScreen},
-  Standard: {screen: StandardScreen},
+  Native: {screen: NativeScreen}
 });
 
 const AppContainer = createAppContainer(RootStack);
