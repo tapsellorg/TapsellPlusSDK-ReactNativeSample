@@ -1,0 +1,27 @@
+version: 2
+jobs:
+  build:
+    docker: # See https://docs.docker.com/get-started/#docker-concepts if you are new to Docker.
+      - image: tapsellorg/android-sdk:v3.1.0
+
+    steps:
+      - checkout
+      
+      - run:
+          name: npm install
+          command: npm install
+
+      - run:
+          name: Fix offline build
+          command: |
+            newLine="          return false;"
+            sed -i "/return BuildConfig.DEBUG;/c\ $newLine" ./android/app/src/main/java/ir/tapsell/plussample/reactnative/MainApplication.java
+            
+            newLine="    if (false) {"
+            sed -i "/(BuildConfig.DEBUG)/c\ $newLine" ./android/app/src/main/java/ir/tapsell/plussample/reactnative/MainApplication.java
+      - run:
+          name: Build
+          command: |
+            mkdir -p ./android/app/src/main/assets
+            react-native bundle --platform android --dev false --entry-file index.js --bundle-output ./android/app/src/main/assets/index.android.bundle --assets-dest ./android/app/src/main/res
+            cd ./android && ./gradlew assembleDebug
