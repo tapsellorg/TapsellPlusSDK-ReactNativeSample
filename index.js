@@ -6,15 +6,14 @@ import {
   RewardedScreen,
   InterstitialScreen,
   NativeScreen,
-  StandardScreen
+  StandardScreen,
 } from './app/screen';
 
 import { TapsellPlus } from 'react-native-tapsell-plus';
-import { APP_KEY } from "./app/Constants";
+import { APP_KEY } from './app/Constants';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-
 
 class TapsellPlusSample extends React.Component {
   constructor() {
@@ -25,8 +24,8 @@ class TapsellPlusSample extends React.Component {
       Standard: 'tapsell',
       Native: 'tapsell',
       Interstitial: 'tapsell',
-      Rewarded: 'tapsell'
-    }
+      Rewarded: 'tapsell',
+    };
   }
 
   onAdItemClick(name) {
@@ -34,9 +33,7 @@ class TapsellPlusSample extends React.Component {
   }
 
   render() {
-    return (
-      <AppStack />
-    )
+    return <AppStack />;
   }
 }
 
@@ -75,6 +72,5 @@ const AppStack = () => {
     </NavigationContainer>
   );
 };
-
 
 AppRegistry.registerComponent(appName, () => TapsellPlusSample);
