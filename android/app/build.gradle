@@ -199,20 +199,21 @@ android {
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
+    //noinspection GradleDynamicVersion
     implementation "com.facebook.react:react-native:+"  // From node_modules
 
     // region AdNetworks
 
     // Admob
-    implementation 'com.google.android.gms:play-services-ads:20.2.0'
+    implementation 'com.google.android.gms:play-services-ads:20.6.0'
     // AdColony
-    implementation("com.adcolony:sdk:4.5.0")
+    implementation("com.adcolony:sdk:4.6.5")
     // Applovin - Why is it named app lovin ?
-    implementation("com.applovin:applovin-sdk:10.3.1")
+    implementation("com.applovin:applovin-sdk:10.3.4")
     // Chartboost
     implementation("com.chartboost:chartboost-sdk:8.2.1")
     // Unity ads
-    implementation("com.unity3d.ads:unity-ads:3.7.4")
+    implementation("com.unity3d.ads:unity-ads:3.7.5")
 
     // endregion
 
