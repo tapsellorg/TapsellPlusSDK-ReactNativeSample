@@ -99,6 +99,14 @@ android {
             keyAlias 'androiddebugkey'
             keyPassword 'android'
         }
+        release {
+            if (project.hasProperty('MYAPP_RELEASE_STORE_FILE')) {
+                storeFile file(MYAPP_RELEASE_STORE_FILE)
+                storePassword MYAPP_RELEASE_STORE_PASSWORD
+                keyAlias MYAPP_RELEASE_KEY_ALIAS
+                keyPassword MYAPP_RELEASE_KEY_PASSWORD
+            }
+        }
     }
     buildTypes {
         debug {
@@ -107,7 +115,7 @@ android {
         release {
             // Caution! In production, you need to generate your own keystore file.
             // see https://reactnative.dev/docs/signed-apk-android.
-            signingConfig signingConfigs.debug
+            signingConfig signingConfigs.release
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
@@ -125,7 +133,7 @@ dependencies {
     // region AdNetworks
 
         // Admob
-        implementation 'com.google.android.gms:play-services-ads:21.5.0'
+        implementation 'com.google.android.gms:play-services-ads:22.1.0'
         // AdColony
         implementation("com.adcolony:sdk:4.8.0")
         // Applovin
@@ -135,8 +143,9 @@ dependencies {
         // Unity ads
         implementation("com.unity3d.ads:unity-ads:4.6.1")
 
-        // endregion
+    // endregion
 
+//    def FLIPPER_VERSION = "0.246.0"
 //    debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}")
 //    debugImplementation("com.facebook.flipper:flipper-network-plugin:${FLIPPER_VERSION}") {
 //        exclude group:'com.squareup.okhttp3', module:'okhttp'
