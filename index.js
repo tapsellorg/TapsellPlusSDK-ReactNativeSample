@@ -19,6 +19,7 @@ class TapsellPlusSample extends React.Component {
   constructor() {
     super();
     TapsellPlus.initialize(APP_KEY);
+    TapsellPlus.setGDPRConsent(true);
     TapsellPlus.setDebugMode(3);
     this.state = {
       Standard: 'tapsell',
